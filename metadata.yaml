@@ -1,5 +1,5 @@
 ---
-image_name: template_test
+image_name: mkcert
 registries:
   - url: bcit.io
 labels:
