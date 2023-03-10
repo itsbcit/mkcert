@@ -1,6 +1,7 @@
 FROM bcit.io/alpine:3.17
 
-<%= snippet('labels', binding) -%>
+LABEL maintainer="jesse@weisner.ca, chriswood.ca@gmail.com"
+LABEL build_id="1678491857"
 
 ENV HOME /certs
 ENV CAROOT ""
@@ -10,7 +11,7 @@ ENV CACERTFILE ""
 
 ENTRYPOINT ["/tini", "--", "/docker-entrypoint.sh"]
 
-ADD https://github.com/FiloSottile/mkcert/releases/download/v<%= image.vars['mkcert_version'] %>/mkcert-v<%= image.vars['mkcert_version'] %>-linux-amd64 /mkcert
+ADD https://github.com/FiloSottile/mkcert/releases/download/v1.4.4/mkcert-v1.4.4-linux-amd64 /mkcert
 ADD mkcert.sh /docker-entrypoint.d/mkcert.sh
 
 RUN \
