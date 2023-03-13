@@ -15,7 +15,7 @@ Example for creating a Minio certs directory:
 docker volume create minio-certs
 docker run --rm \
     -v minio-certs:/certs \
-    -e CERTFILE=public.cert -e KEYFILE=private.key \
+    -e CERTFILE=public.crt -e KEYFILE=private.key \
     -e CACERTFILE="CAs/rootCA.pem" \
     -e CERTNAMES="s3.example.com" \
     bcit.io/mkcert
